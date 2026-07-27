@@ -1,0 +1,43 @@
+{
+  "name": "neyvia-app-pdf",
+  "version": "0.1.0",
+  "description": "Interactive PDF workspace for humans and agents, packaged as a Neyvia MCP App.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobthecomputer/neyvia-app-pdf.git"
+  },
+  "homepage": "https://github.com/bobthecomputer/neyvia-app-pdf#readme",
+  "bugs": {
+    "url": "https://github.com/bobthecomputer/neyvia-app-pdf/issues"
+  },
+  "bin": {
+    "neyvia-pdf-app": "src/cli.mjs"
+  },
+  "files": [
+    ".neyvia/app.json",
+    "src/cli.mjs",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "node --check src/cli.mjs && node --test tests/*.test.mjs",
+    "test": "npm run check",
+    "pack:check": "npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=22.22.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server-pdf": "1.7.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0"
+  },
+  "overrides": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@hono/node-server": "2.0.12"
+  }
+}
