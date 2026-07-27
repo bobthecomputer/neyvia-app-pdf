@@ -1,6 +1,6 @@
 {
   "name": "neyvia-app-pdf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Interactive PDF workspace for humans and agents, packaged as a Neyvia MCP App.",
   "type": "module",
   "license": "MIT",

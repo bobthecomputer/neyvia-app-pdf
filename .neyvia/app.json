@@ -2,7 +2,7 @@
   "schema": "neyvia.marketplace-app/v1",
   "appId": "neyvia.app.pdf-studio",
   "name": "Neyvia PDF Studio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "kind": "app",
   "audience": "shared",
   "summary": "Open, inspect, search, annotate, fill, and export PDFs through one surface shared by the user and the agent.",
@@ -18,7 +18,7 @@
     "node": ">=22.22.3"
   },
   "surfaces": [
-    "ui://pdf/viewer"
+    "ui://pdf-viewer/mcp-app.html"
   ],
   "operations": [
     {

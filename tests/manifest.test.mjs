@@ -11,7 +11,7 @@ test("manifest preserves the shared app boundary", async () => {
   assert.equal(manifest.audience, "shared");
   assert.match(manifest.sourceUrl, /^https:\/\/github\.com\//);
   assert.equal(manifest.standard, "mcp-apps/2026-01-26");
-  assert.ok(manifest.surfaces.length > 0);
+  assert.deepEqual(manifest.surfaces, ["ui://pdf-viewer/mcp-app.html"]);
   assert.deepEqual(
     manifest.operations.map((operation) => operation.id),
     [
