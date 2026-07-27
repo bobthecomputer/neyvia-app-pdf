@@ -1,0 +1,57 @@
+{
+  "schema": "neyvia.marketplace-app/v1",
+  "appId": "neyvia.app.pdf-studio",
+  "name": "Neyvia PDF Studio",
+  "version": "0.1.0",
+  "kind": "app",
+  "audience": "shared",
+  "summary": "Open, inspect, search, annotate, fill, and export PDFs through one surface shared by the user and the agent.",
+  "sourceUrl": "https://github.com/bobthecomputer/neyvia-app-pdf",
+  "license": "MIT",
+  "standard": "mcp-apps/2026-01-26",
+  "runtime": {
+    "transport": "stdio",
+    "command": "neyvia-pdf-app",
+    "args": [
+      "--stdio"
+    ],
+    "node": ">=22.22.3"
+  },
+  "surfaces": [
+    "ui://pdf/viewer"
+  ],
+  "operations": [
+    {
+      "id": "list_pdfs",
+      "audience": "agent"
+    },
+    {
+      "id": "display_pdf",
+      "audience": "shared"
+    },
+    {
+      "id": "interact",
+      "audience": "agent"
+    },
+    {
+      "id": "read_pdf_bytes",
+      "audience": "app"
+    },
+    {
+      "id": "save_pdf",
+      "audience": "app"
+    }
+  ],
+  "permissions": {
+    "localRead": "client-roots-only",
+    "localWrite": "mounted-writable-root-and-explicit-action",
+    "remoteRead": "upstream-domain-allowlist",
+    "secrets": "none"
+  },
+  "upstream": {
+    "package": "@modelcontextprotocol/server-pdf",
+    "version": "1.7.5",
+    "repository": "https://github.com/modelcontextprotocol/ext-apps/tree/main/examples/pdf-server",
+    "license": "MIT"
+  }
+}
